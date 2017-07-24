@@ -1,0 +1,25 @@
+{
+  "name": "sass + ES6",
+  "version": "1.0.0",
+  "description": "Scroll Story Final Project",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^2.2.1"
+  }
+}
