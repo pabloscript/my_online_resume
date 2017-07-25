@@ -1,61 +1,259 @@
-* {
+//Reset
+
+html, body, ul, ol, li, form, fieldset, legend
+{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-size: 10px;
-  font-family: 'Rock Salt', cursive;
 }
 
-//div.wrap-all {
-//  height: 100vh;
-//  display: flex;
-//  flex-direction: column;
-//
+h1, h2, h3, h4, h5, h6, p { margin-top: 0; }
+
+fieldset,img { border: 0; }
+
+legend { color: #000; }
+
+li { list-style: none; }
+
+sup { vertical-align: text-top; }
+
+sub { vertical-align: text-bottom; }
+
+table
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td
+{
+  text-align: left;
+  vertical-align: top;
+  font-weight: normal;
+}
+
+input, textarea, select
+{
+  font-size: 110%;
+  line-height: 1.1;
+}
+
+abbr, acronym
+{
+  border-bottom: .1em dotted;
+  cursor: help;
+}
+
+
+// General
+
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+// Desktop view
+
+//.inactive {
+//  display: none;
 //}
-.inactive {
+
+#up, #down {
+  position: fixed;
+  bottom: 5rem;
+  font-size: 2rem;
+}
+
+#up {
+  right: 5rem;
+}
+
+#down {
+  left: 5rem;
+}
+
+nav#mobile-menu {
   display: none;
+}
+
+nav#full-menu {
+  position: fixed;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 4rem;
+
+  a {
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 2.2rem;
+    color: #000;
+    font-size: 2rem;
+    padding: .5rem;
+  }
+
+  a:hover {
+    color: #fff;
+    font-weight: 700;
+  }
 }
 
 div {
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-}
 
-nav.menu {
-  position: fixed;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  .container {
+    width: 100%;
+  }
 
-  a {
-    text-decoration: none;
-    color: lightgrey;
-    font-size: 2rem;
-    padding: 2rem;
+  .pics {
+    width: 56.25%;
+    background: #85D7FF;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  .text {
+    width: 43.75%;
+    font-size: 3.8rem;
+    font-weight: 500;
+    line-height: 5rem;
+    color: #000;
+    padding-left: 4rem;
+    padding-right: 2rem;
+    background: #f2f2f2;
   }
 }
 
-.container {
-  width: 100%;
+// Medium view
+
+@media (max-width: 1100px) {
+  nav#full-menu {
+    display: none;
+  }
+
+  nav#mobile-menu {
+    position: fixed;
+    right: 3rem;
+    display: flex;
+    padding-top: 2rem;
+
+    a {
+      text-decoration: none;
+      font-weight: 400;
+      color: #000;
+      font-size: 2rem;
+    }
+
+    a:hover {
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+
+  div {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    .container {
+      width: 100%;
+    }
+
+    .pics {
+      width: 50%;
+      background: #85D7FF;
+
+      img {
+        width: 70%;
+      }
+    }
+
+    .text {
+      width: 50%;
+      font-size: 3.5rem;
+      font-weight: 500;
+      line-height: 5rem;
+      color: #000;
+      padding-left: 4rem;
+      padding-right: 2rem;
+      background: #f2f2f2;
+    }
+  }
 }
 
-.pics {
-  width: 60%;
-  background: url("../img/paper_1.png");
-}
+// Mobile view
 
-.text {
-  width: 40%;
-  font-size: 2.5rem;
-  color: lightgrey;
-  padding: 4rem;
-  background: url("../img/black_paper.png");
-}
+@media (max-width: 720px) {
+  div.inactive {
+    display: none;
+  }
 
-img {
-  width: 50%;
+  nav#full-menu {
+    display: none;
+  }
+
+  nav#mobile-menu {
+    position: fixed;
+    right: 3rem;
+    display: flex;
+    padding-top: 2rem;
+
+    a {
+      text-decoration: none;
+      font-weight: 400;
+      color: #000;
+      font-size: 2rem;
+    }
+  }
+
+  div {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      flex-wrap: wrap;
+    }
+
+    .pics {
+      width: 100%;
+      background: #85D7FF;
+
+      img {
+        width: 70%;
+      }
+
+    }
+
+    .text {
+      width: 100%;
+      font-size: 3.5rem;
+      font-weight: 500;
+      line-height: 5rem;
+      text-align: center;
+      color: #000;
+      padding-left: 4rem;
+      padding-right: 2rem;
+      background: #f2f2f2;
+    }
+  }
 }
