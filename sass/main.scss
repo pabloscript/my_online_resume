@@ -52,12 +52,29 @@ abbr, acronym
   font-family: 'Roboto', sans-serif;
 }
 
+#hi .pics {
+  background: #7dfbff;
+}
 
-// Desktop view
+#edu .pics {
+  background: #00ffff;
+}
 
-//.inactive {
-//  display: none;
-//}
+#recruit .pics {
+  background: #00eba1;
+}
+
+#copy .pics {
+  background: #00dfeb;
+}
+
+#dev .pics {
+  background: #85D7FF;
+}
+
+#contact .pics {
+  background: #fff;
+}
 
 #up, #down {
   position: fixed;
@@ -66,12 +83,19 @@ abbr, acronym
 }
 
 #up {
-  right: 5rem;
+  right: 10rem;
 }
 
 #down {
-  left: 5rem;
+  left: 10rem;
 }
+
+// Desktop view
+
+//.inactive {
+//  display: none;
+//}
+
 
 nav#mobile-menu {
   display: none;
@@ -115,7 +139,6 @@ div {
 
   .pics {
     width: 56.25%;
-    background: #85D7FF;
 
     img {
       width: 50%;
@@ -175,7 +198,7 @@ div {
 
     .pics {
       width: 50%;
-      background: #85D7FF;
+      //background: #85D7FF;
 
       img {
         width: 70%;
@@ -236,7 +259,7 @@ div {
 
     .pics {
       width: 100%;
-      background: #85D7FF;
+      //background: #85D7FF;
 
       img {
         width: 70%;

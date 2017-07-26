@@ -74,9 +74,32 @@
 
 
 $(function () {
-    $(document).on("scroll", ".div.container", function () {
-        console.log("Aaaaa");
+    // Płynne skrolowanie z odnośników w menu
+    $(document).on('click', 'a', function (event) {
+        event.preventDefault();
+        $('body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 800);
     });
+
+    // Akcje dla strzałek góra/dół
+    var containerDivs = $(".container");
+    console.log(containerDivs);
+    var upArrow = $("#up");
+    console.log(upArrow);
+    var downArrow = $("#down");
+    console.log(downArrow);
+
+    downArrow.on("click", function () {
+        console.log("Down");
+    });
+    upArrow.on("click", function () {
+        console.log("Up");
+    });
+
+    $('html, body').animate({
+        scrollTop: $(containerDivs).offset().top
+    }, 1000);
 });
 
 /***/ })
