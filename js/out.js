@@ -83,30 +83,17 @@ $(function () {
     });
 
     // Akcje dla strzałek góra/dół
-    var containerDivs = $(".container").next();
+    var containerDivs = $(".container");
     console.log(containerDivs);
     var upArrow = $("#up");
-    console.log(upArrow);
     var downArrow = $("#down");
-    console.log(downArrow);
-
-    // downArrow.on("click", () => {
-    //     console.log("Down");
-    //     for (let i=0; i<containerDivs.length; i++) {
-    //         containerDivs.eq(i).hide(700);
-    //     }
-    // });
 
     downArrow.click(function () {
-        var next;
-        next = $(this).parent().find(".container").next();
-        console.log(next);
-        $('html,body').animate({ scrollTop: next.offset().top
+        $('html,body').animate({ scrollTop: containerDivs.next().offset().top
         }, 1000);
     });
 
     upArrow.on("click", function () {
-        console.log("Up");
         $('html, body').animate({
             scrollTop: $(containerDivs.prev()).offset().top
         }, 1000);
@@ -124,7 +111,6 @@ $(function () {
     $("#mobile-menu").on("click", function () {
         $("#full-menu").slideToggle(500);
         $("#full-menu").css("display", "flex");
-        // $($(this).find("a")).css("color", "white");
     });
 });
 
