@@ -79,27 +79,53 @@ $(function () {
         event.preventDefault();
         $('body').animate({
             scrollTop: $($.attr(this, 'href')).offset().top
-        }, 800);
+        }, 700);
     });
 
     // Akcje dla strzałek góra/dół
-    var containerDivs = $(".container");
+    var containerDivs = $(".container").next();
     console.log(containerDivs);
     var upArrow = $("#up");
     console.log(upArrow);
     var downArrow = $("#down");
     console.log(downArrow);
 
-    downArrow.on("click", function () {
-        console.log("Down");
-    });
-    upArrow.on("click", function () {
-        console.log("Up");
+    // downArrow.on("click", () => {
+    //     console.log("Down");
+    //     for (let i=0; i<containerDivs.length; i++) {
+    //         containerDivs.eq(i).hide(700);
+    //     }
+    // });
+
+    downArrow.click(function () {
+        var next;
+        next = $(this).parent().find(".container").next();
+        console.log(next);
+        $('html,body').animate({ scrollTop: next.offset().top
+        }, 1000);
     });
 
-    $('html, body').animate({
-        scrollTop: $(containerDivs).offset().top
-    }, 1000);
+    upArrow.on("click", function () {
+        console.log("Up");
+        $('html, body').animate({
+            scrollTop: $(containerDivs.prev()).offset().top
+        }, 1000);
+    });
+
+    // $(document).scroll(() => {
+    //     console.log("Scroll");
+    //     containerDivs.slideToggle();
+    //     $(this).next(containerDivs).slideToggle();
+    // //     $('html, body').animate({
+    // //         scrollTop: $(containerDivs.next()).offset().top
+    // //     }, 1000);
+    // });
+
+    $("#mobile-menu").on("click", function () {
+        $("#full-menu").slideToggle(500);
+        $("#full-menu").css("display", "flex");
+        // $($(this).find("a")).css("color", "white");
+    });
 });
 
 /***/ })
