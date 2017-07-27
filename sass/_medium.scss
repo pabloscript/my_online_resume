@@ -25,6 +25,10 @@
 
   nav#full-menu {
     display: none;
+  }
+
+  nav#full-menu-mobile {
+    display: none;
     position: fixed;
     flex-direction: column;
     right: 0;
@@ -50,7 +54,7 @@
     }
   }
 
-  nav#mobile-menu {
+  nav#mobile-menu-button {
     position: fixed;
     right: 3rem;
     display: flex;

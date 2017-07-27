@@ -75,6 +75,7 @@
 
 $(function () {
     // Płynne skrolowanie z odnośników w menu
+
     $(document).on('click', 'a', function (event) {
         event.preventDefault();
         $('body').animate({
@@ -87,32 +88,64 @@ $(function () {
     console.log(containerDivs);
     var upArrow = $("#up");
     var downArrow = $("#down");
+    var counter = 1;
 
     downArrow.click(function () {
-        $('html,body').animate({ scrollTop: containerDivs.next().offset().top
-        }, 1000);
+        console.log(counter);
+        $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
+        }, 700);
+        counter++;
+
+        if (counter === containerDivs.length) {
+            downArrow.hide();
+        } else {
+            downArrow.show();
+        }
     });
 
     upArrow.on("click", function () {
-        $('html, body').animate({
-            scrollTop: $(containerDivs.prev()).offset().top
-        }, 1000);
+        console.log(counter);
+        if (counter === 0) {
+            upArrow.hide();
+        } else {
+            $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
+            }, 700);
+            counter--;
+            upArrow.show();
+        }
     });
 
     // $(document).scroll(() => {
-    //     console.log("Scroll");
-    //     containerDivs.slideToggle();
-    //     $(this).next(containerDivs).slideToggle();
-    // //     $('html, body').animate({
-    // //         scrollTop: $(containerDivs.next()).offset().top
-    // //     }, 1000);
+    //     console.log("ScrollDown");
+    //     var vheight = $(window).height();
+    //     $('html, body').animate({
+    //         scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
+    //     }, 500);
+    //
+    //
+    //
     // });
 
-    $("#mobile-menu").on("click", function () {
-        $("#full-menu").slideToggle(500);
-        $("#full-menu").css("display", "flex");
+
+    // Mobile menu show
+
+    var mobileMenuBtn = $("#mobile-menu-button");
+    var fullMenuMobile = $("#full-menu-mobile");
+
+    mobileMenuBtn.on("click", function () {
+        fullMenuMobile.slideToggle(500);
+        fullMenuMobile.css("display", "flex");
+    });
+
+    fullMenuMobile.find("a").on("click", function () {
+        event.preventDefault();
+        fullMenuMobile.slideToggle(710);
     });
 });
+
+//     $('html, body').animate({
+//         scrollTop: $(containerDivs.next()).offset().top
+//     }, 1000);
 
 /***/ })
 /******/ ]);

@@ -26,7 +26,11 @@
   left: 10rem;
 }
 
-nav#mobile-menu {
+nav#mobile-menu-button {
+  display: none;
+}
+
+nav#full-menu-mobile {
   display: none;
 }
 
