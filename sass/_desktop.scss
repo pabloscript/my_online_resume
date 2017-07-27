@@ -4,7 +4,7 @@
   position: fixed;
   left: 4rem;
   top: 4rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
 
   span {
     font-size: 2rem;
@@ -45,9 +45,9 @@ nav#full-menu {
   a {
     text-decoration: none;
     font-weight: 400;
-    line-height: 2.2rem;
+    line-height: 2rem;
     color: #000;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: .5rem;
   }
 
@@ -71,7 +71,7 @@ div {
   }
 
   .pics {
-    width: 56.25%;
+    width: 50%;
 
     img {
       width: 55%;
@@ -79,7 +79,7 @@ div {
   }
 
   .text {
-    width: 43.75%;
+    width: 50%;
     font-size: 3rem;
     font-weight: 500;
     line-height: 3.5rem;
