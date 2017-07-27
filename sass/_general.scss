@@ -1,0 +1,50 @@
+// General settings
+
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#hi .pics {
+  background: #84FFFF;
+}
+
+#edu .pics {
+  background: #18FFFF;
+}
+
+#recruit .pics {
+  background: #00E5FF;
+}
+
+#copy .pics {
+  background: #00B8D4;
+}
+
+#dev .pics {
+  background: #00E676;
+}
+
+#contact .pics {
+  background: #69F0AE;
+}
+
+#up, #down {
+  position: fixed;
+  bottom: 5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#up {
+  right: 10rem;
+}
+
+#down {
+  left: 10rem;
+}
+
+.inactive {
+  display: none;
+}
