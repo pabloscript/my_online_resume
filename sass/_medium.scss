@@ -5,7 +5,22 @@
   #logo {
     left: 4rem;
     top: 2rem;
+  }
 
+  #up, #down {
+    bottom: 3rem;
+
+    img {
+      width: 5rem;
+    }
+  }
+
+  #up {
+    right: 6rem;
+  }
+
+  #down {
+    left: 6rem;
   }
 
   nav#full-menu {
@@ -75,9 +90,9 @@
 
     .text {
       width: 50%;
-      font-size: 3.3rem;
+      font-size: 2.8rem;
       font-weight: 500;
-      line-height: 5rem;
+      line-height: 3rem;
       color: #000;
       padding-left: 4rem;
       padding-right: 2rem;

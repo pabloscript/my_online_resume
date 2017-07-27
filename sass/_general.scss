@@ -30,20 +30,7 @@
   background: #69F0AE;
 }
 
-#up, #down {
-  position: fixed;
-  bottom: 5rem;
-  font-size: 2rem;
-  cursor: pointer;
-}
 
-#up {
-  right: 10rem;
-}
-
-#down {
-  left: 10rem;
-}
 
 .inactive {
   display: none;

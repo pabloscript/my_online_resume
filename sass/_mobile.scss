@@ -7,6 +7,23 @@
     top: 2rem;
   }
 
+  #up, #down {
+    bottom: 2rem;
+
+    img {
+      width: 4rem;
+    }
+
+  }
+
+  #up {
+    right: 3rem;
+  }
+
+  #down {
+    left: 3rem;
+  }
+
   nav#full-menu {
     right: 0;
     align-items: center;
@@ -65,9 +82,9 @@
 
     .text {
       width: 100%;
-      font-size: 3.3rem;
+      font-size: 2.5rem;
       font-weight: 500;
-      line-height: 5rem;
+      line-height: 3rem;
       text-align: center;
       color: #000;
       padding-left: 7rem;
