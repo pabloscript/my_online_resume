@@ -93,14 +93,14 @@ $(function () {
     var scrollUp = function scrollUp() {
         $('html, body').animate({
             scrollTop: (Math.ceil($(window).scrollTop() / vheight) - 1) * vheight
-        }, 500);
+        }, 400);
     };
 
     // Scroll down on down arrow click function:
     var scrollDown = function scrollDown() {
         $('html, body').animate({
             scrollTop: (Math.floor($(window).scrollTop() / vheight) + 1) * vheight
-        }, 500);
+        }, 400);
     };
 
     // Click to scroll down event:
@@ -115,15 +115,13 @@ $(function () {
         scrollUp();
     });
 
-    $(document).scroll(function () {
-        console.log("ScrollDown");
-        //     var vheight = $(window).height();
-        //     $('html, body').animate({
-        //         scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
-        //     }, 500);
-        //
-        //
-        //
+    $(window).on('wheel', function (event) {
+        var delta = event.originalEvent.deltaY;
+        if (delta > 0) {
+            scrollDown();
+        } else {
+            scrollUp();
+        }
     });
 
     // Mobile menu show
@@ -174,6 +172,10 @@ $(function () {
 //         upArrow.show();
 //     }
 // });
+
+// $('html, body').animate({
+//     scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
+// }, 500);
 
 /***/ })
 /******/ ]);

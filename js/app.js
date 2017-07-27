@@ -18,14 +18,14 @@ $(() => {
     const scrollUp = () => {
         $('html, body').animate({
             scrollTop: (Math.ceil($(window).scrollTop() / vheight)-1) * vheight
-        }, 500);
+        }, 400);
     };
 
     // Scroll down on down arrow click function:
     const scrollDown = () => {
         $('html, body').animate({
             scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
-        }, 500);
+        }, 400);
     };
 
     // Click to scroll down event:
@@ -40,15 +40,14 @@ $(() => {
         scrollUp();
     });
 
-    $(document).scroll(() => {
-        console.log("ScrollDown");
-    //     var vheight = $(window).height();
-    //     $('html, body').animate({
-    //         scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
-    //     }, 500);
-    //
-    //
-    //
+    $(window).on('wheel', (event) => {
+        let delta = event.originalEvent.deltaY;
+        if (delta > 0) {
+            scrollDown();
+        }
+        else {
+            scrollUp();
+        }
     });
 
 
@@ -101,3 +100,7 @@ $(() => {
 //         upArrow.show();
 //     }
 // });
+
+// $('html, body').animate({
+//     scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
+// }, 500);
