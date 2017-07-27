@@ -1,48 +1,47 @@
 $(() => {
     // Płynne skrolowanie z odnośników w menu
-
-    $(document).on('click', 'a', function(event){
+    $(document).on('click', 'a', function() {
         event.preventDefault();
-        $('body').animate({
+        $("body").animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 700);
     });
 
-    // Akcje dla strzałek góra/dół
+    // Variables and functions for up and down arrows
     const containerDivs = $(".container");
     console.log(containerDivs);
     const upArrow = $("#up");
     const downArrow = $("#down");
-    let counter = 1;
+    const vheight = $(window).height();
 
+    // Scroll up on up arrow click function:
+    const scrollUp = () => {
+        $('html, body').animate({
+            scrollTop: (Math.ceil($(window).scrollTop() / vheight)-1) * vheight
+        }, 500);
+    };
+
+    // Scroll down on down arrow click function:
+    const scrollDown = () => {
+        $('html, body').animate({
+            scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
+        }, 500);
+    };
+
+    // Click to scroll down event:
     downArrow.click(() => {
-        console.log(counter);
-        $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
-        }, 700);
-        counter++;
-
-        if (counter === containerDivs.length) {
-            downArrow.hide();
-        } else {
-            downArrow.show();
-        }
+        event.preventDefault();
+        scrollDown();
     });
 
-
-    upArrow.on("click", () => {
-        console.log(counter);
-        if (counter === 0) {
-           upArrow.hide();
-        } else {
-            $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
-            }, 700);
-            counter--;
-            upArrow.show();
-        }
+    // Click to scroll up event:
+    upArrow.click(() => {
+        event.preventDefault();
+        scrollUp();
     });
 
-    // $(document).scroll(() => {
-    //     console.log("ScrollDown");
+    $(document).scroll(() => {
+        console.log("ScrollDown");
     //     var vheight = $(window).height();
     //     $('html, body').animate({
     //         scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
@@ -50,7 +49,7 @@ $(() => {
     //
     //
     //
-    // });
+    });
 
 
     // Mobile menu show
@@ -70,7 +69,35 @@ $(() => {
 
 })
 
+// Unused code:
 
 //     $('html, body').animate({
 //         scrollTop: $(containerDivs.next()).offset().top
 //     }, 1000);
+
+
+// downArrow.click(() => {
+//     console.log(counter);
+//     $('body').stop().animate({ scrollTop: containerDivs.eq(counter).offset().top
+//     }, 700);
+//     counter++;
+//
+//     if (counter === containerDivs.length) {
+//         downArrow.hide();
+//     } else {
+//         downArrow.show();
+//     }
+// });
+
+
+// upArrow.on("click", () => {
+//     console.log(counter);
+//     if (counter === 0) {
+//        upArrow.hide();
+//     } else {
+//         $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
+//         }, 700);
+//         counter--;
+//         upArrow.show();
+//     }
+// });

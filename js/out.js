@@ -75,57 +75,56 @@
 
 $(function () {
     // Płynne skrolowanie z odnośników w menu
-
-    $(document).on('click', 'a', function (event) {
+    $(document).on('click', 'a', function () {
         event.preventDefault();
-        $('body').animate({
+        $("body").animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 700);
     });
 
-    // Akcje dla strzałek góra/dół
+    // Variables and functions for up and down arrows
     var containerDivs = $(".container");
     console.log(containerDivs);
     var upArrow = $("#up");
     var downArrow = $("#down");
-    var counter = 1;
+    var vheight = $(window).height();
 
+    // Scroll up on up arrow click function:
+    var scrollUp = function scrollUp() {
+        $('html, body').animate({
+            scrollTop: (Math.ceil($(window).scrollTop() / vheight) - 1) * vheight
+        }, 500);
+    };
+
+    // Scroll down on down arrow click function:
+    var scrollDown = function scrollDown() {
+        $('html, body').animate({
+            scrollTop: (Math.floor($(window).scrollTop() / vheight) + 1) * vheight
+        }, 500);
+    };
+
+    // Click to scroll down event:
     downArrow.click(function () {
-        console.log(counter);
-        $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
-        }, 700);
-        counter++;
-
-        if (counter === containerDivs.length) {
-            downArrow.hide();
-        } else {
-            downArrow.show();
-        }
+        event.preventDefault();
+        scrollDown();
     });
 
-    upArrow.on("click", function () {
-        console.log(counter);
-        if (counter === 0) {
-            upArrow.hide();
-        } else {
-            $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
-            }, 700);
-            counter--;
-            upArrow.show();
-        }
+    // Click to scroll up event:
+    upArrow.click(function () {
+        event.preventDefault();
+        scrollUp();
     });
 
-    // $(document).scroll(() => {
-    //     console.log("ScrollDown");
-    //     var vheight = $(window).height();
-    //     $('html, body').animate({
-    //         scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
-    //     }, 500);
-    //
-    //
-    //
-    // });
-
+    $(document).scroll(function () {
+        console.log("ScrollDown");
+        //     var vheight = $(window).height();
+        //     $('html, body').animate({
+        //         scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
+        //     }, 500);
+        //
+        //
+        //
+    });
 
     // Mobile menu show
 
@@ -143,9 +142,38 @@ $(function () {
     });
 });
 
+// Unused code:
+
 //     $('html, body').animate({
 //         scrollTop: $(containerDivs.next()).offset().top
 //     }, 1000);
+
+
+// downArrow.click(() => {
+//     console.log(counter);
+//     $('body').stop().animate({ scrollTop: containerDivs.eq(counter).offset().top
+//     }, 700);
+//     counter++;
+//
+//     if (counter === containerDivs.length) {
+//         downArrow.hide();
+//     } else {
+//         downArrow.show();
+//     }
+// });
+
+
+// upArrow.on("click", () => {
+//     console.log(counter);
+//     if (counter === 0) {
+//        upArrow.hide();
+//     } else {
+//         $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
+//         }, 700);
+//         counter--;
+//         upArrow.show();
+//     }
+// });
 
 /***/ })
 /******/ ]);
