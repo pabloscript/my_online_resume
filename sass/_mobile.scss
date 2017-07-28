@@ -13,7 +13,6 @@
     img {
       width: 4rem;
     }
-
   }
 
   #up {
@@ -24,40 +23,15 @@
     left: 3rem;
   }
 
-  nav#full-menu {
-    display: none;
-  }
-
   nav#full-menu-mobile {
-    right: 0;
-    align-items: center;
     justify-content: flex-start;
     width: 100%;
     padding-top: 7rem;
 
     a {
-      font-weight: 400;
       line-height: 1.5rem;
       font-size: 2.2rem;
-      padding: 2rem;
     }
-
-    a:hover {
-      color: dimgray;
-      font-weight: 700;
-    }
-  }
-
-  nav#mobile-menu-button {
-    position: fixed;
-    right: 3rem;
-    display: flex;
-    padding-top: 2rem;
-    text-decoration: none;
-    font-weight: 400;
-    color: #000;
-    font-size: 2rem;
-    cursor: pointer;
   }
 
   div {
@@ -81,19 +55,14 @@
       img {
         width: 80%;
       }
-
     }
 
     .text {
       width: 100%;
       font-size: 2.5rem;
-      font-weight: 500;
-      line-height: 3rem;
       text-align: center;
-      color: #000;
       padding-left: 7rem;
       padding-right: 7rem;
-      background: #f2f2f2;
     }
   }
 }

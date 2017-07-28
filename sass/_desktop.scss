@@ -31,7 +31,7 @@ nav#mobile-menu-button {
 }
 
 nav#full-menu-mobile {
-  display: none;
+  display: none !important;
 }
 
 nav#full-menu {
@@ -49,11 +49,11 @@ nav#full-menu {
     color: #000;
     font-size: 1.8rem;
     padding: .5rem;
-  }
 
-  a:hover {
-    color: #fff;
-    font-weight: 700;
+    &:hover {
+      color: gray;
+      font-weight: 700;
+    }
   }
 }
 
