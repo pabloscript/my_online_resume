@@ -1,0 +1,23 @@
+const pl =[
+  {
+    hi: "Cześć, jestem Paweł. <br><br> Poklikaj sobie, jeśli chcesz się dowiedzieć, jak zostałem programistą front-end."
+  },
+      "edu": "Ukończyłem psychologię na Uniwersytecie Warszawskim w 2013 roku.",
+      "recruit": "Jeszcze na studiach zacząłem pracę dla jednej z największych firm technologicznych świata, gdzie przez ponad 6 lat rekrutowałem inżynierów.",
+      "copy": "Następnie przez ponad rok w tej samej firmie dbałem o jej wizerunek jako specjalista ds. komunikacji, głównie pisząc i redagując teksty po polsku i po angielsku.",
+      "dev": "W połowie 2017 roku trafiłem na bootcamp programistyczny w Coders Lab, gdzie - w bardzo intensywny i skondensowany sposób - nauczyłem się: <br><br> HTML, CSS, JavaScript (w tym ES6), jQuery, React.",
+      "contact": "Teraz jestem gotowy, żeby dalej rozwijać się jako Front-End Developer i uczyć nowych rzeczy. <br><br> Chcesz się ze mną skontaktować? Nic prostszego!",
+    }
+  ]
+
+  "en": [
+    {
+      "hi": "Hi, I'm Paweł. <br><br> Click around the website to learn how I managed to become a front-end developer.",
+      "edu": "I graduated from the University of Warsaw, faculty of Psychology, in 2013.",
+      "recruit": "During my studies I started working for one of the biggest digital industrial companies in the world, where for over 6 years I recruited engineers.",
+      "copy": "Then I switched positions within the same company, for over a year becoming a communications specialist, with a main focus on copywriting and proofreading in Polish and English.",
+      "dev": "In the mid 2017 I attended a software dev bootcamp at Coders Lab where - in a very intensive and condensed manner - I learned: <br><br> HTML, CSS, JavaScript (including ES6), jQuery, React.",
+      "contact": "Now I'm ready to further develop as a developer and learn new things. <br><br> If you wish to contact me - don't hesitate!",
+    },
+  ]
+}

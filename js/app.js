@@ -1,15 +1,17 @@
+import {en} from "./lang.js";
+import {pl} from "./lang.js";
+
 $(() => {
-    // Płynne skrolowanie z odnośników w menu
-    $(document).on('click', 'a', function() {
+    // Smooth scroll to anchors from menu
+    $(document).on("click", "a", function() {
         event.preventDefault();
         $("body").animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
+            scrollTop: $($.attr(this, "href")).offset().top
         }, 700);
     });
 
     // Variables and functions for up and down arrows
     const containerDivs = $(".container");
-    console.log(containerDivs);
     const upArrow = $("#up");
     const downArrow = $("#down");
     const vheight = $(window).height();
@@ -40,7 +42,7 @@ $(() => {
         scrollUp();
     });
 
-    $(window).on('wheel', (event) => {
+    $(window).on("wheel", (event) => {
         let delta = event.originalEvent.deltaY;
         if (delta > 0) {
             scrollDown();
@@ -52,7 +54,6 @@ $(() => {
 
 
     // Mobile menu show
-
     const mobileMenuBtn = $("#mobile-menu-button");
     const fullMenuMobile = $("#full-menu-mobile");
 
@@ -66,41 +67,32 @@ $(() => {
         fullMenuMobile.slideToggle(710);
     });
 
+    // Language change
+    const plButton = $("#lang").find("#pl");
+    const enButton = $("#lang").find("#en");
+    const hiText = $("#hi .text");
+    const eduText = $("#edu .text");
+    const recruitText = $("#recruit .text");
+    const copyText = $("#copy .text");
+    const devText = $("#dev .text");
+    const contactText = $("#contact .text");
+
+    plButton.click(() => {
+        hiText.html(pl[0].text);
+        eduText.html(pl[1].text);
+        recruitText.html(pl[2].text);
+        copyText.html(pl[3].text);
+        devText.html(pl[4].text);
+        contactText.html(pl[5].text);
+    });
+
+    enButton.click(() => {
+        hiText.html(en[0].text);
+        eduText.html(en[1].text);
+        recruitText.html(en[2].text);
+        copyText.html(en[3].text);
+        devText.html(en[4].text);
+        contactText.html(en[5].text);
+    });
+
 })
-
-// Unused code:
-
-//     $('html, body').animate({
-//         scrollTop: $(containerDivs.next()).offset().top
-//     }, 1000);
-
-
-// downArrow.click(() => {
-//     console.log(counter);
-//     $('body').stop().animate({ scrollTop: containerDivs.eq(counter).offset().top
-//     }, 700);
-//     counter++;
-//
-//     if (counter === containerDivs.length) {
-//         downArrow.hide();
-//     } else {
-//         downArrow.show();
-//     }
-// });
-
-
-// upArrow.on("click", () => {
-//     console.log(counter);
-//     if (counter === 0) {
-//        upArrow.hide();
-//     } else {
-//         $('body').animate({ scrollTop: containerDivs.eq(counter).offset().top
-//         }, 700);
-//         counter--;
-//         upArrow.show();
-//     }
-// });
-
-// $('html, body').animate({
-//     scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
-// }, 500);
