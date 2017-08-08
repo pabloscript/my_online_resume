@@ -16,4 +16,4 @@ Directories structure:
 
 
 Author:
-Pawe³ Kozicki
+Pawel Kozicki
