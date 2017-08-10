@@ -14,5 +14,9 @@ Directories structure:
 8. index.html
 
 
+I'm still working on this project, so there are a few things to be changed:
+- add English version of menu
+- put language switching in a loop
+
 Author:
 Pawel Kozicki
