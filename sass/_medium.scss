@@ -2,9 +2,18 @@
 
 @media (max-width: 1100px) {
 
+  #lang {
+    top: 3.5rem;
+    font-size: 1.6rem;
+
+    span {
+      font-size: 1.6rem;
+    }
+  }
+
   #logo {
-    left: 4rem;
     top: 2rem;
+    font-size: 1.6rem;
   }
 
   #up, #down {
@@ -76,14 +85,8 @@
     }
 
     .text {
-      //width: 50%;
       font-size: 2.8rem;
-      //font-weight: 500;
       line-height: 3rem;
-      //color: #000;
-      //padding-left: 4rem;
-      //padding-right: 2rem;
-      //background: #f2f2f2;
     }
   }
 }

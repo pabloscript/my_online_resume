@@ -1,5 +1,18 @@
 // Desktop view
 
+#lang {
+  position: fixed;
+  left: 2.5rem;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+
+  span {
+    font-size: 1.2rem;
+    color: gray;
+    cursor: pointer;
+  }
+}
+
 #logo {
   position: fixed;
   left: 4rem;
@@ -31,7 +44,7 @@ nav#mobile-menu-button {
 }
 
 nav#full-menu-mobile {
-  display: none !important;
+  display: none;
 }
 
 nav#full-menu {
