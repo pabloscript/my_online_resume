@@ -60,7 +60,7 @@ $(() => {
     mobileMenuBtn.on("click", () => {
         fullMenuMobile.slideToggle(500);
         fullMenuMobile.css("display", "flex");
-    })
+    });
 
     fullMenuMobile.find("a").on("click", () => {
         event.preventDefault();
@@ -78,21 +78,35 @@ $(() => {
     const contactText = $("#contact .text");
 
     plButton.click(() => {
-        hiText.html(pl[0].text);
-        eduText.html(pl[1].text);
-        recruitText.html(pl[2].text);
-        copyText.html(pl[3].text);
-        devText.html(pl[4].text);
-        contactText.html(pl[5].text);
+        hiText.html(pl[0]);
+        eduText.html(pl[1]);
+        recruitText.html(pl[2]);
+        copyText.html(pl[3]);
+        devText.html(pl[4]);
+        contactText.html(pl[5]);
     });
 
     enButton.click(() => {
-        hiText.html(en[0].text);
-        eduText.html(en[1].text);
-        recruitText.html(en[2].text);
-        copyText.html(en[3].text);
-        devText.html(en[4].text);
-        contactText.html(en[5].text);
+        hiText.html(en[0]);
+        eduText.html(en[1]);
+        recruitText.html(en[2]);
+        copyText.html(en[3]);
+        devText.html(en[4]);
+        contactText.html(en[5]);
     });
 
-})
+    // for (let i=0; i<pl.length; i++) {
+    //     plButton.click(() => {
+    //         console.log("PL");
+    //         containerDivs.html(pl[i]);
+    //     });
+    // }
+    //
+    // for (let i=0; i<en.length; i++) {
+    //     enButton.click(() => {
+    //         console.log("EN");
+    //         containerDivs.html(en[i]);
+    //     });
+    // }
+
+});
