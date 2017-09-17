@@ -42,15 +42,16 @@ $(() => {
         scrollUp();
     });
 
-    $(window).on("wheel", (event) => {
-        let delta = event.originalEvent.deltaY;
-        if (delta > 0) {
-            scrollDown();
-        }
-        else {
-            scrollUp();
-        }
-    });
+    // Smooth scroll through viewport on mouse wheel scrolling (temporarily turned off, because it hangs up the browser)
+    // $(window).on("wheel", (event) => {
+    //     let delta = event.originalEvent.deltaY;
+    //     if (delta > 0) {
+    //         scrollDown();
+    //     }
+    //     else {
+    //         scrollUp();
+    //     }
+    // });
 
 
     // Mobile menu show
