@@ -95,18 +95,4 @@ $(() => {
         contactText.html(en[5]);
     });
 
-    // for (let i=0; i<pl.length; i++) {
-    //     plButton.click(() => {
-    //         console.log("PL");
-    //         containerDivs.html(pl[i]);
-    //     });
-    // }
-    //
-    // for (let i=0; i<en.length; i++) {
-    //     enButton.click(() => {
-    //         console.log("EN");
-    //         containerDivs.html(en[i]);
-    //     });
-    // }
-
 });
