@@ -1,5 +1,7 @@
 import {en} from "./lang.js";
 import {pl} from "./lang.js";
+import {enMenu} from "./lang.js";
+import {plMenu} from "./lang.js";
 
 $(() => {
     // Smooth scroll to anchors from menu
@@ -70,30 +72,32 @@ $(() => {
 
     // Language change
     const plButton = $("#lang").find("#pl");
-    const enButton = $("#lang").find("#en");
-    const hiText = $("#hi .text");
-    const eduText = $("#edu .text");
-    const recruitText = $("#recruit .text");
-    const copyText = $("#copy .text");
-    const devText = $("#dev .text");
-    const contactText = $("#contact .text");
+    const enButton = $("#lang").find("#en");    
+    const text = $(".text");
+    const nav = $("#full-menu a");
 
     plButton.click(() => {
-        hiText.html(pl[0]);
-        eduText.html(pl[1]);
-        recruitText.html(pl[2]);
-        copyText.html(pl[3]);
-        devText.html(pl[4]);
-        contactText.html(pl[5]);
+        
+        text.each(function(i) {
+            $(this).html(pl[i]);
+        });
+        
+        nav.each(function(i) {
+            $(this).text(plMenu[i]);
+        });
+
     });
 
     enButton.click(() => {
-        hiText.html(en[0]);
-        eduText.html(en[1]);
-        recruitText.html(en[2]);
-        copyText.html(en[3]);
-        devText.html(en[4]);
-        contactText.html(en[5]);
-    });
+        
+        text.each(function(i) {
+            $(this).html(en[i]);
+        });
+    
+        nav.each(function(i) {
+            $(this).text(enMenu[i]);
+        });
 
+    });
+      
 });

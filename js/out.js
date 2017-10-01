@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,24 +73,7 @@
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var pl = ["Cześć, jestem Paweł. <br><br> Poklikaj sobie, jeśli chcesz się dowiedzieć, jak zostałem programistą front-end.", "Ukończyłem psychologię na Uniwersytecie Warszawskim w 2011 roku.", "Jeszcze na studiach zacząłem pracę dla jednej z największych firm technologicznych świata, gdzie przez ponad 6 lat rekrutowałem inżynierów.", "Następnie przez prawie 1,5 roku w tej samej firmie dbałem o jej wizerunek jako specjalista ds. komunikacji, głównie pisząc i redagując teksty po polsku i po angielsku.", "W połowie 2017 roku trafiłem na bootcamp programistyczny w Coders Lab, gdzie - w bardzo intensywny i skondensowany sposób - nauczyłem się: <br><br> HTML, CSS, JavaScript (w tym ES6), jQuery, React.", "Teraz jestem gotowy, żeby dalej rozwijać się jako Front-End Developer i uczyć nowych rzeczy. <br><br> Chcesz się ze mną skontaktować? Nic prostszego! <br><br> pe.kozicki (at) gmail.com"];
-
-var en = ["Hi, I'm Paweł. <br><br> Click around the website to learn how I managed to become a front-end developer.", "I graduated from the University of Warsaw, faculty of Psychology, in 2011.", "During my studies I started working for one of the biggest digital industrial companies in the world, where for over 6 years I recruited engineers.", "Then I switched positions within the same company where for over a year, as a communications specialist, I was focused on copywriting and proofreading in Polish and English.", "In the mid 2017 I attended a software dev bootcamp at Coders Lab where - in a very intensive and condensed manner - I learned: <br><br> HTML, CSS, JavaScript (including ES6), jQuery, React.", "Now I'm ready to further develop as a developer and learn new things. <br><br> If you wish to contact me - don't hesitate! <br><br> pe.kozicki (at) gmail.com"];
-
-exports.pl = pl;
-exports.en = en;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _lang = __webpack_require__(0);
+var _lang = __webpack_require__(1);
 
 $(function () {
     // Smooth scroll to anchors from menu
@@ -162,31 +145,54 @@ $(function () {
     // Language change
     var plButton = $("#lang").find("#pl");
     var enButton = $("#lang").find("#en");
-    var hiText = $("#hi .text");
-    var eduText = $("#edu .text");
-    var recruitText = $("#recruit .text");
-    var copyText = $("#copy .text");
-    var devText = $("#dev .text");
-    var contactText = $("#contact .text");
+    var text = $(".text");
+    var nav = $("#full-menu a");
 
     plButton.click(function () {
-        hiText.html(_lang.pl[0]);
-        eduText.html(_lang.pl[1]);
-        recruitText.html(_lang.pl[2]);
-        copyText.html(_lang.pl[3]);
-        devText.html(_lang.pl[4]);
-        contactText.html(_lang.pl[5]);
+
+        text.each(function (i) {
+            $(this).html(_lang.pl[i]);
+        });
+
+        nav.each(function (i) {
+            $(this).text(_lang.plMenu[i]);
+        });
     });
 
     enButton.click(function () {
-        hiText.html(_lang.en[0]);
-        eduText.html(_lang.en[1]);
-        recruitText.html(_lang.en[2]);
-        copyText.html(_lang.en[3]);
-        devText.html(_lang.en[4]);
-        contactText.html(_lang.en[5]);
+
+        text.each(function (i) {
+            $(this).html(_lang.en[i]);
+        });
+
+        nav.each(function (i) {
+            $(this).text(_lang.enMenu[i]);
+        });
     });
 });
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var pl = ["Cześć, jestem Paweł. <br><br> Poklikaj sobie, jeśli chcesz się dowiedzieć, jak zostałem programistą front-end.", "Ukończyłem psychologię na Uniwersytecie Warszawskim w 2011 roku.", "Jeszcze na studiach zacząłem pracę dla jednej z największych firm technologicznych świata, gdzie przez ponad 6 lat rekrutowałem inżynierów.", "Następnie przez prawie 1,5 roku w tej samej firmie dbałem o jej wizerunek jako specjalista ds. komunikacji, głównie pisząc i redagując teksty po polsku i po angielsku.", "W połowie 2017 roku trafiłem na bootcamp programistyczny w Coders Lab, gdzie - w bardzo intensywny i skondensowany sposób - nauczyłem się: <br><br> HTML, CSS, JavaScript (w tym ES6), jQuery, React.", "Teraz jestem gotowy, żeby dalej rozwijać się jako Front-End Developer i uczyć nowych rzeczy. <br><br> Chcesz się ze mną skontaktować? Nic prostszego! <br><br> pe.kozicki (at) gmail.com"];
+
+var en = ["Hi, I'm Paweł. <br><br> Click around the website to learn how I managed to become a front-end developer.", "I graduated from the University of Warsaw, faculty of Psychology, in 2011.", "During my studies I started working for one of the biggest digital industrial companies in the world, where for over 6 years I recruited engineers.", "Then I switched positions within the same company where for over a year, as a communications specialist, I was focused on copywriting and proofreading in Polish and English.", "In the mid 2017 I attended a software dev bootcamp at Coders Lab where - in a very intensive and condensed manner - I learned: <br><br> HTML, CSS, JavaScript (including ES6), jQuery, React.", "Now I'm ready to further develop as a developer and learn new things. <br><br> If you wish to contact me - don't hesitate! <br><br> pe.kozicki (at) gmail.com"];
+
+var plMenu = ["Cześć", "Edukacja", "Rekruter", "Copywriter", "Programista", "Kontakt"];
+
+var enMenu = ["Hello", "Education", "Recruiter", "Copywriter", "Developer", "Contact"];
+
+exports.pl = pl;
+exports.en = en;
+exports.plMenu = plMenu;
+exports.enMenu = enMenu;
 
 /***/ })
 /******/ ]);
