@@ -1,8 +1,7 @@
 # Scroll Story Final Project
-================================
 
-This repo includes the code of my final project at Coders Labs' JavaScript Developer: React bootcamp.
 
+This repo includes the code of my final project at Coders Labs' JavaScript Developer bootcamp.
 Directories structure:
 1. -css (CSS code compiled from Sass)
 2. -img (images)
@@ -14,10 +13,10 @@ Directories structure:
 8. index.html
 
 
-I'm still working on this project, so there are a few things to be changed:
-- add English version of menu
-- put language switching in a loop
-- update all smooth scrolling events, because they work only on Chrome
+I'm still working on this project in occasional pieces of free time, so there are a few things to be improved:
+- smooth scrolling events (arrows and nav anchors) do not work in Firefox
+- smooth scrolling event for mouse wheel works fine at first, but eventually it hangs up the browser
+
 
 Author:
 Pawel Kozicki
