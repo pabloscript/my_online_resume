@@ -99,41 +99,42 @@ exports.enMenu = enMenu;
 var _lang = __webpack_require__(0);
 
 $(function () {
-    // Smooth scroll to anchors from menu
-    $(document).on("click", "a", function () {
+
+    // Smooth scroll to anchors from menu:
+    $(document).on('click', 'a[href^="#"]', function () {
         event.preventDefault();
-        $("body").animate({
-            scrollTop: $($.attr(this, "href")).offset().top
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
         }, 700);
     });
 
-    // Variables and functions for up and down arrows
+    // Variables for up and down arrows events:
     var containerDivs = $(".container");
     var upArrow = $("#up");
     var downArrow = $("#down");
     var vheight = $(window).height();
 
-    // Scroll up on up arrow click function:
+    // Scroll up to previous container function:
     var scrollUp = function scrollUp() {
         $('html, body').animate({
             scrollTop: (Math.ceil($(window).scrollTop() / vheight) - 1) * vheight
         }, 400);
     };
 
-    // Scroll down on down arrow click function:
+    // Scroll down to next container function:
     var scrollDown = function scrollDown() {
         $('html, body').animate({
             scrollTop: (Math.floor($(window).scrollTop() / vheight) + 1) * vheight
         }, 400);
     };
 
-    // Click to scroll down event:
+    // Down arrow click event for scrolling down:
     downArrow.click(function () {
         event.preventDefault();
         scrollDown();
     });
 
-    // Click to scroll up event:
+    // Up arrow click event for scrolling up:
     upArrow.click(function () {
         event.preventDefault();
         scrollUp();
@@ -149,7 +150,6 @@ $(function () {
     //         scrollUp();
     //     }
     // });
-
 
     // Mobile menu show
     var mobileMenuBtn = $("#mobile-menu-button");
@@ -173,30 +173,24 @@ $(function () {
     var navMobile = $("#full-menu-mobile a");
 
     plButton.click(function () {
-
         text.each(function (i) {
             $(this).html(_lang.pl[i]);
         });
-
         nav.each(function (i) {
             $(this).text(_lang.plMenu[i]);
         });
-
         navMobile.each(function (i) {
             $(this).text(_lang.plMenu[i]);
         });
     });
 
     enButton.click(function () {
-
         text.each(function (i) {
             $(this).html(_lang.en[i]);
         });
-
         nav.each(function (i) {
             $(this).text(_lang.enMenu[i]);
         });
-
         navMobile.each(function (i) {
             $(this).text(_lang.enMenu[i]);
         });

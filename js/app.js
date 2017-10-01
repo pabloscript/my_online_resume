@@ -4,41 +4,42 @@ import {enMenu} from "./lang.js";
 import {plMenu} from "./lang.js";
 
 $(() => {
-    // Smooth scroll to anchors from menu
-    $(document).on("click", "a", function() {
+
+    // Smooth scroll to anchors from menu:
+    $(document).on('click', 'a[href^="#"]', function() {
         event.preventDefault();
-        $("body").animate({
-            scrollTop: $($.attr(this, "href")).offset().top
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
         }, 700);
     });
 
-    // Variables and functions for up and down arrows
+    // Variables for up and down arrows events:
     const containerDivs = $(".container");
     const upArrow = $("#up");
     const downArrow = $("#down");
     const vheight = $(window).height();
 
-    // Scroll up on up arrow click function:
+    // Scroll up to previous container function:
     const scrollUp = () => {
         $('html, body').animate({
             scrollTop: (Math.ceil($(window).scrollTop() / vheight)-1) * vheight
         }, 400);
     };
 
-    // Scroll down on down arrow click function:
+    // Scroll down to next container function:
     const scrollDown = () => {
         $('html, body').animate({
             scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
         }, 400);
     };
 
-    // Click to scroll down event:
+    // Down arrow click event for scrolling down:
     downArrow.click(() => {
         event.preventDefault();
         scrollDown();
     });
 
-    // Click to scroll up event:
+    // Up arrow click event for scrolling up:
     upArrow.click(() => {
         event.preventDefault();
         scrollUp();
@@ -54,7 +55,6 @@ $(() => {
     //         scrollUp();
     //     }
     // });
-
 
     // Mobile menu show
     const mobileMenuBtn = $("#mobile-menu-button");
@@ -77,36 +77,28 @@ $(() => {
     const nav = $("#full-menu a");
     const navMobile = $("#full-menu-mobile a");
 
-    plButton.click(() => {
-        
+    plButton.click(() => {        
         text.each(function(i) {
             $(this).html(pl[i]);
-        });
-        
+        });        
         nav.each(function(i) {
             $(this).text(plMenu[i]);
         });
-
         navMobile.each(function(i) {
             $(this).text(plMenu[i]);
         });
-
     });
 
-    enButton.click(() => {
-        
+    enButton.click(() => {        
         text.each(function(i) {
             $(this).html(en[i]);
-        });
-    
+        });    
         nav.each(function(i) {
             $(this).text(enMenu[i]);
         });
-
         navMobile.each(function(i) {
             $(this).text(enMenu[i]);
         });
-
     });
       
 });
