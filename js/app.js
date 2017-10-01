@@ -75,6 +75,7 @@ $(() => {
     const enButton = $("#lang").find("#en");    
     const text = $(".text");
     const nav = $("#full-menu a");
+    const navMobile = $("#full-menu-mobile a");
 
     plButton.click(() => {
         
@@ -83,6 +84,10 @@ $(() => {
         });
         
         nav.each(function(i) {
+            $(this).text(plMenu[i]);
+        });
+
+        navMobile.each(function(i) {
             $(this).text(plMenu[i]);
         });
 
@@ -95,6 +100,10 @@ $(() => {
         });
     
         nav.each(function(i) {
+            $(this).text(enMenu[i]);
+        });
+
+        navMobile.each(function(i) {
             $(this).text(enMenu[i]);
         });
 
