@@ -13,10 +13,8 @@ Directories structure:
 8. index.html
 
 
-I'm still working on this project in occasional pieces of free time, so there are a few things to be improved:
-- smooth scrolling events (arrows and nav anchors) do not work in Firefox
-- smooth scrolling event for mouse wheel works fine at first, but eventually it hangs up the browser
-
-
 Author:
 Pawel Kozicki
+
+Images:
+Pawel Jaczewski
