@@ -12,9 +12,6 @@ Directories structure:
 7. package.json (modules list)
 8. index.html
 
-
-Author:
-Pawel Kozicki
-
-Images:
-Pawel Jaczewski
+=====================
+Author: Pawel Kozicki
+Images: Pawel Jaczewski
