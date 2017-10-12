@@ -13,5 +13,7 @@ Directories structure:
 8. index.html
 
 =====================
+
 Author: Pawel Kozicki
+
 Images: Pawel Jaczewski
