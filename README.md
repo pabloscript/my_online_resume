@@ -1,4 +1,4 @@
-# Scroll Story Final Project
+# My Online Resume
 
 
 This repo includes the code of my final project at Coders Labs' JavaScript Developer bootcamp.
