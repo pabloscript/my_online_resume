@@ -1,7 +1,7 @@
 {
   "name": "sass-with-ES6",
   "version": "1.0.0",
-  "description": "Scroll Story Final Project",
+  "description": "My Online Resume",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
